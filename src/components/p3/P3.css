@@ -1,0 +1,170 @@
+:root {
+  --wine: #830E0E;
+}
+
+.p3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding-bottom: 3rem;
+  overflow: hidden;
+}
+
+.p3 .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* TÍTULOS                                                                    */
+/* -------------------------------------------------------------------------- */
+h1.cabecalho {
+  text-align: center;
+  width: 80%;
+  color: var(--wine);
+  font-family: var(--font1-light);
+  font-weight: normal;
+  letter-spacing: 3px;
+  word-spacing: 1px;
+  line-height: 1.2;
+}
+
+h1.cabecalho2 {
+  text-align: center;
+  max-width: 1000px;
+  color: var(--wine);
+  font-family: var(--font1-light);
+  font-weight: normal;
+  letter-spacing: 3px;
+  word-spacing: 1px;
+  line-height: 1.2;
+}
+
+/* -------------------------------------------------------------------------- */
+/* TEXTO                                                                      */
+/* -------------------------------------------------------------------------- */
+.p3 .text {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+
+.p3 .text::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  left: -1.5rem;
+  border-left: 1px dashed var(--wine);
+}
+
+.p3 p {
+  font-family: var(--font1-light);
+  font-weight: 500;
+  font-size: 1.6rem;
+  width: 100%;
+  line-height: 1.4;
+}
+
+/* -------------------------------------------------------------------------- */
+/* IMAGEM ESTÁTICA UNIFICADA (SUBSTITUTA DO SWIPER)                          */
+/* -------------------------------------------------------------------------- */
+.static-banner-wrapper {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0 2rem 0;
+}
+
+.static-banner-img {
+  width: 100%;
+  height: auto;
+  max-height: 550px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  display: block;
+}
+
+/* -------------------------------------------------------------------------- */
+/* RESPONSIVIDADE                                                             */
+/* -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .p3 .text { 
+    width: 90%; 
+  }
+  
+  .static-banner-wrapper {
+    max-width: 90%;
+  }
+
+  h1.cabecalho {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .p3 { 
+    padding: 0 1.5rem 3rem 1.5rem; 
+  }
+  
+  .p3 .content { 
+    gap: 2.5rem; 
+  }
+  
+  .p3 .text {
+    width: 100%;
+    align-items: flex-start;
+    padding-left: 1.5rem;
+  }
+  
+  .p3 .text::after { 
+    left: 0; 
+  }
+  
+  .p3 p { 
+    font-size: 1.3rem; 
+  }
+
+  h1.cabecalho, 
+  h1.cabecalho2 {
+    width: 100%;
+    font-size: 1.4rem;
+    letter-spacing: 1.5px;
+  }
+
+  .static-banner-wrapper {
+    max-width: 100%;
+    padding: 0.5rem 0;
+  }
+
+  .static-banner-img {
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .p3 p { 
+    font-size: 1.1rem; 
+  }
+
+  .static-banner-img {
+    max-height: 380px;
+    object-fit: contain; /* Garante enquadramento total sem cortes em telas muito pequenas */
+  }
+}

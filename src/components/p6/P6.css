@@ -1,0 +1,139 @@
+/* Estilos Base */
+.p6 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    padding: 5rem 5%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.p6 .text {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    width: 100%;
+    max-width: 600px;
+}
+
+.p6 .content, 
+.p6 .rodape {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.p6 .content {
+    gap: 1.2rem;
+}
+
+.p6 .rodape {
+    gap: 2rem;
+}
+
+.p6 .img {
+    flex-shrink: 0;
+}
+
+.p6 img {
+    width: 300px;
+    height: auto;
+    border-radius: 1rem;
+    object-fit: cover;
+    will-change: transform, opacity;
+}
+
+.p6 h1 span {
+    display: inline-block; /* Necessário para animar o width */
+    border-bottom: 3px solid var(--wine);
+    white-space: nowrap;
+}
+
+.p6 button {
+    padding: 1.2rem 2rem;
+    border-radius: 3rem;
+    background: none;
+    border: 2px solid var(--wine);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.p6 button:hover {
+    background-color: var(--wine);
+    color: white;
+}
+
+.p6 .last p {
+    color: var(--wine);
+    font-size: 0.95rem;
+}
+
+.p6 .info-datas p {
+    margin-bottom: 0.5rem;
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+    .p6 {
+        gap: 2.5rem;
+    }
+    .p6 img {
+        width: 300px;
+        height: 400px;
+    }
+    .p6 .text {
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .p6 {
+        flex-direction: column;
+        text-align: center;
+        padding: 4rem 2rem;
+    }
+    .p6 .text {
+        max-width: 100%;
+        align-items: center;
+    }
+    .p6 .content, 
+    .p6 .rodape {
+        align-items: center;
+    }
+    .p6 img {
+        width: 100%;
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .p6 {
+        gap: 3rem;
+        padding: 3rem 1.5rem;
+    }
+    .p6 h1 {
+        font-size: 1.8rem;
+    }
+    .p6 p {
+        font-size: 1.1rem;
+    }
+    .p6 button {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .p6 h1 {
+        font-size: 1.6rem;
+    }
+    .p6 p {
+        font-size: 1rem;
+    }
+    .p6 .img img {
+        border-radius: 0.8rem;
+    }
+}

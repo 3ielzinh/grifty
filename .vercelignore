@@ -1,0 +1,8 @@
+node_modules
+dist
+.git
+.vercel
+public/video.MOV
+src/assets/video
+src/assets/images/cut/Fotos cortes-20260124T210946Z-3-001.zip
+urls.txt

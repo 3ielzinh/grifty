@@ -1,0 +1,30 @@
+.div-wrapper {
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--wine, #830E0E);
+}
+
+.div {
+    width: 100%;
+    height: 300px;
+    background: url('../../assets/images/whats/h2.webp');
+    background-repeat: no-repeat;
+    background-size: 120% auto; /* Aumentado para garantir sobra de imagem */
+    background-position: center 50%;
+    display: block;
+    will-change: background-position;
+}
+
+@media (max-width: 600px) {
+    .div {
+        height: 220px;
+        background-size: 150% auto; /* Mais zoom no mobile para parallax visível */
+    }
+}
+
+@media (min-width: 1024px) {
+    .div {
+        height: 450px;
+        background-size: cover;
+    }
+}

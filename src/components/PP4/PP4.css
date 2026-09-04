@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+.pp4-section {
+    width: 100%;
+    min-height: auto;
+    padding: 3rem 1rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+}
+
+.pp4-container {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 3rem;
+}
+
+.pp4-title {
+    color: #520000;
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: 'Open Sans', 'fonte3', sans-serif;
+}
+
+.pp4-slider-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.pp4-feedback-container {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    justify-content: center;
+}
+
+.pp4-feedback-box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.pp4-feedback-box img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.pp4-arrow {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.pp4-arrow:hover {
+    background-color: #520000;
+}
+
+.pp4-cta-button {
+    background-color: transparent;
+    color: #520000;
+    border: 2px solid #520000;
+    padding: 0.9rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.pp4-cta-button:hover {
+    background-color: #520000;
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .pp4-title {
+        font-size: 2.2rem;
+    }
+    .pp4-slider-wrapper {
+        position: relative;
+        padding: 0 2rem;
+    }
+    .pp4-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    .pp4-prev {
+        left: -5px;
+    }
+    .pp4-next {
+        right: -5px;
+    }
+    .pp4-cta-button {
+        font-size: 0.95rem;
+        padding: 0.8rem 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .pp4-title {
+        font-size: 2.1rem;
+    }
+    .pp4-slider-wrapper {
+        padding: 0 1.5rem;
+    }
+}
+
+/* --- Modal / Tela Cheia --- */
+.pp4-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 1.5rem;
+    animation: pp4FadeIn 0.3s ease;
+}
+
+.pp4-modal-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pp4-modal-content img {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.pp4-modal-close {
+    position: absolute;
+    top: -45px;
+    right: 0;
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.pp4-modal-close:hover {
+    background-color: #520000;
+    color: #ffffff;
+}
+
+@keyframes pp4FadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

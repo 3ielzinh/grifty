@@ -1,0 +1,93 @@
+.p1 {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: transparent;
+}
+
+.p1 .here {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 5;
+}
+
+.p1 .text {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    margin-top: 2rem;
+}
+
+.p1 h1 {
+    color: rgba(0, 0, 0, 0.4);
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    max-width: 800px;
+}
+
+.p1 h2 {
+    color: rgba(0, 0, 0, 0.4);
+    font-size: 1.1rem;
+    letter-spacing: 4px;
+}
+
+.p1 .logo {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+}
+
+.p1 .e1, .p1 .e2, .p1 .e3, .p1 .e4 {
+    width: 600px;
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+    will-change: transform;
+}
+
+.p1 .e1 { left: -20rem; top: -5rem; }
+.p1 .e2 { right: -20rem; top: -5rem; }
+.p1 .e3 { left: -20rem; bottom: -5rem; transform: rotate(180deg); }
+.p1 .e4 { right: -20rem; bottom: -5rem; }
+
+@media (max-width: 1024px) {
+    .p1 .logo { width: 600px; }
+    .p1 .e1, .p1 .e2, .p1 .e3, .p1 .e4 { width: 450px; }
+    .p1 h1 { font-size: 1.4rem; padding: 0 2rem; }
+    .p1 h2 { font-size: .8rem; padding: 0 2rem; }
+}
+
+@media (max-width: 768px) {
+    .p1 {
+        min-height: 100vh;
+        height: 100svh;
+        padding: 2rem 0;
+    }
+    .p1 .logo { width: 85%; }
+    .p1 .text { gap: 3rem; }
+    .p1 h1 { font-size: 1rem; padding: 0 2rem; }
+    .p1 h2 { font-size: .8rem; padding: 0 2rem; }
+    .p1 .e1 { left: -12rem; top: -5rem; width: 350px; }
+    .p1 .e2 { right: -12rem; top: -5rem; width: 350px; }
+    .p1 .e3 { left: -12rem; bottom: -5rem; width: 350px; }
+    .p1 .e4 { right: -12rem; bottom: -5rem; width: 350px; }
+}
+
+@media (max-width: 480px) {
+    .p1 .logo { width: 280px; }
+    .p1 h1 { font-size: 1rem; padding: 0 2rem; }
+    .p1 h2 { font-size: .8rem; padding: 0 2rem; }
+    .p1 .text { gap: 2rem; }
+    .p1 .e1 { left: -8rem; top: -2rem; width: 220px; }
+    .p1 .e2 { right: -8rem; top: -2rem; width: 220px; }
+    .p1 .e3 { left: -8rem; bottom: -2rem; width: 220px; }
+    .p1 .e4 { right: -8rem; bottom: -2rem; width: 220px; }
+}

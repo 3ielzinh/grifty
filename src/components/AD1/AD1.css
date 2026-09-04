@@ -1,0 +1,140 @@
+:root {
+    --wine: #830E0E;
+}
+
+.ad1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 4rem 2rem;
+    overflow: hidden;
+}
+
+.ad1-content {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+.ad1-grid {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
+    width: 100%;
+}
+
+/* Cards com Fundo Vinho e Texto Branco */
+.ad1-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    border: 1px solid var(--wine);
+    border-radius: 12px;
+    background-color: var(--wine);
+    box-shadow: 0 10px 25px rgba(131, 14, 14, 0.2);
+    will-change: transform, opacity;
+}
+
+.ad1-card h3 {
+    font-family: var(--font1-light, sans-serif);
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.ad1-card p {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1rem;
+    line-height: 1.4;
+    font-weight: 300;
+}
+
+.ad1-card span {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 500;
+}
+
+.ad1-button {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    will-change: transform, opacity;
+}
+
+/* Botão no estilo original */
+.ad1-button button {
+    padding: 1.2rem 2.5rem;
+    border-radius: 3rem;
+    background: transparent;
+    border: 2px solid var(--wine);
+    color: #000;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.ad1-button button:hover {
+    background-color: var(--wine);
+    color: #fff;
+}
+
+/* -------------------------------------------------------------------------- */
+/* RESPONSIVIDADE                                                             */
+/* -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+    .ad1-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ad1-card {
+        width: 100%;
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ad1 {
+        padding: 2rem 1.5rem;
+    }
+
+    .ad1-content {
+        gap: 2rem;
+    }
+
+    .ad1-card {
+        padding: 1.8rem 1rem;
+    }
+
+    .ad1-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .ad1-card p {
+        font-size: 0.9rem;
+    }
+
+    .ad1-button button {
+        font-size: 0.9rem;
+        width: 100%;
+        padding: 0.8rem;
+    }
+}

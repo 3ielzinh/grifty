@@ -1,0 +1,96 @@
+:root {
+  --wine: #830E0E;
+  --bg-wine: #830E0E;
+}
+
+/* Seção principal - Flexbox total para centralização */
+.ad-banner-section {
+  width: 100%;
+  background-color: var(--bg-wine);
+  padding: 3.5rem 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* Container de conteúdo centralizado */
+.ad-banner-container {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Título */
+.ad-banner-title {
+  text-align: center;
+  width: 100%;
+  color: #ffffff;
+  font-family: var(--font1-light);
+  font-weight: normal;
+  letter-spacing: 2px;
+  word-spacing: 1px;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.ad-banner-title strong {
+  font-weight: bold;
+}
+
+/* Wrapper da Imagem centralizado */
+.ad-banner-image-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Imagem ajustada sem estourar */
+.ad-banner-image {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  max-height: 480px;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  display: block;
+}
+
+/* -------------------------------------------------------------------------- */
+/* RESPONSIVIDADE                                                             */
+/* -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .ad-banner-section {
+    padding: 2.5rem 1rem;
+  }
+
+  .ad-banner-title {
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+  }
+
+  .ad-banner-image {
+    max-height: 360px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ad-banner-section {
+    padding: 2rem 0.8rem;
+  }
+
+  .ad-banner-title {
+    font-size: 1.1rem;
+  }
+
+  .ad-banner-image {
+    max-height: 280px;
+  }
+}

@@ -1,0 +1,194 @@
+:root {
+  --wine: #830E0E;
+}
+
+/* Container Geral */
+.p5_0 {
+  width: 100%;
+  padding: 5rem 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* Título da Seção */
+.p5_0-title h1 {
+  text-align: center;
+  width: 100%;
+  color: var(--wine);
+  font-family: var(--font1-light);
+  font-weight: normal;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+/* Estrutura de cada Fileira */
+.row-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.row-title {
+  font-family: var(--font1-light);
+  color: var(--wine);
+  font-size: 1.5rem;
+  font-weight: normal;
+  letter-spacing: 2px;
+  padding-left: 2rem;
+  text-transform: uppercase;
+}
+
+/* Wrapper Principal (Abrange o Container e as Setas) */
+.carousel-main-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* -------------------------------------------------------------------------- */
+/* CONTAINERS (COM MÃOZINHA DE ARRASTE HABILITADA)                           */
+/* -------------------------------------------------------------------------- */
+.carousel-container,
+.static-container {
+  width: 100%;
+  overflow-x: auto;
+  padding: 15px 0;
+  cursor: grab !important;
+  scrollbar-width: none;
+  touch-action: pan-x pan-y !important;
+  -webkit-overflow-scrolling: touch !important;
+}
+
+.carousel-container:active,
+.static-container:active {
+  cursor: grabbing !important;
+}
+
+.carousel-container::-webkit-scrollbar,
+.static-container::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-track,
+.static-track {
+  display: flex;
+  width: fit-content;
+}
+
+.static-track {
+  padding-left: 2rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/* BOTÕES DE NAVEGAÇÃO (SETAS)                                                */
+/* -------------------------------------------------------------------------- */
+.nav-arrow-p5 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  color: var(--wine);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 100;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-arrow-p5:hover {
+  background-color: #f5f5f5;
+  transform: translateY(-50%) scale(1.05);
+}
+
+.nav-arrow-p5.left {
+  left: 20px;
+}
+
+.nav-arrow-p5.right {
+  right: 20px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* CARDS E EFEITOS HOVER                                                      */
+/* -------------------------------------------------------------------------- */
+.modulo-card {
+  flex: 0 0 320px;
+  padding: 0 16px;
+  position: relative;
+  transition: opacity 0.4s ease, filter 0.4s ease;
+  will-change: transform;
+}
+
+.modulo-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  pointer-events: none !important;
+  -webkit-user-drag: none !important;
+  user-select: none !important;
+  display: block;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .carousel-track:hover .modulo-card,
+  .static-track:hover .modulo-card {
+    opacity: 0.5;
+    filter: grayscale(0.5);
+  }
+
+  .carousel-track .modulo-card:hover,
+  .static-track .modulo-card:hover {
+    opacity: 1;
+    filter: grayscale(0);
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* RESPONSIVIDADE (DISPOSITIVOS MÓVEIS)                                       */
+/* -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .p5_0 {
+    padding: 2.5rem 0;
+    gap: 2rem;
+  }
+
+  .row-wrapper {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .row-title {
+    font-size: 1.1rem;
+    padding-left: 1rem;
+    text-align: left;
+  }
+
+  .static-container {
+    overflow-x: scroll !important;
+  }
+
+  .static-track {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .modulo-card {
+    flex: 0 0 240px;
+    padding: 0 8px;
+  }
+
+  .nav-arrow-p5 {
+    display: none !important;
+  }
+}

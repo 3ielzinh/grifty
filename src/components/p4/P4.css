@@ -1,0 +1,90 @@
+.p4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 5rem;
+  overflow: visible; /* Importante para a seta não sumir */
+}
+
+.p4 .content {
+  width: 100%;
+  max-width: 800px;
+}
+
+.p4 .here {
+  position: relative;
+  padding-left: 30px; /* Aumentado para dar espaço à linha */
+  margin-top: 30px;
+}
+
+/* Base da linha fixa */
+.p4 .scroll-base {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.05);
+  z-index: 1;
+}
+
+/* Linha colorida animada */
+.p4 .scroll-line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2px;
+  height: 100%; 
+  background: var(--wine, #830E0E);
+  z-index: 2;
+  transform-origin: top;
+  will-change: transform;
+}
+
+/* Seta animada */
+.p4 .scroll-arrow {
+  position: absolute;
+  left: -7px; /* Centraliza a seta na linha de 2px */
+  font-size: 16px;
+  color: var(--wine, #830E0E);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: top, opacity;
+  transform: translateY(-50%); /* Garante que a ponta da seta faça sentido */
+}
+
+.p4 .seguir p {
+  margin: 15px 0;
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  line-height: 1.4;
+  color: #333;
+}
+
+.p4 .seguir p svg {
+  color: var(--wine, #830E0E);
+  flex-shrink: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .p4 {
+    margin-bottom: 3rem;
+    padding: 0 20px;
+  }
+  .p4 .title h1 { font-size: 1.8rem; }
+  .p4 .here { padding-left: 25px; }
+  .p4 .seguir p { font-size: 1rem; }
+  .p4 .scroll-arrow { font-size: 14px; left: -6px; }
+}
+
+@media (max-width: 480px) {
+  .p4 .title h1 { font-size: 1.6rem; }
+  .p4 .title h3 { font-size: 1rem; opacity: 0.8; }
+  .p4 .seguir p { margin: 12px 0; }
+}

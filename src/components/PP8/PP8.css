@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+.pp8-section {
+    width: 100%;
+    min-height: auto;
+    padding: 4rem 1rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #520000;
+    margin-top: 1rem;
+}
+
+.pp8-container {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 3rem;
+}
+
+.pp8-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-family: 'Open Sans', 'fonte3', sans-serif;
+}
+
+.pp8-subtitle {
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.8;
+    font-family: 'Open Sans', 'fonte2', sans-serif;
+}
+
+.pp8-title {
+    color: #ffffff;
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: 'Open Sans', 'fonte3', sans-serif;
+}
+
+.pp8-faq-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.pp8-faq-item {
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pp8-faq-item:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.pp8-faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 1rem;
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-align: left;
+    gap: 1rem;
+    font-family: 'Open Sans', 'fonte2', sans-serif;
+}
+
+.pp8-icon {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.pp8-faq-answer {
+    padding: 0 1rem 1.5rem 1rem;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.05rem;
+    line-height: 1.5;
+    font-family: 'Open Sans', 'fonte2', sans-serif;
+}
+
+@media (max-width: 768px) {
+    .pp8-title {
+        font-size: 1.6rem;
+    }
+    .pp8-faq-question {
+        font-size: 1.25rem;
+        padding: 1.2rem 0.8rem;
+    }
+    .pp8-faq-answer {
+        font-size: 0.95rem;
+        padding: 0 0.8rem 1.2rem 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .pp8-title {
+        font-size: 1.3rem;
+    }
+    .pp8-faq-question {
+        font-size: 0.95rem;
+    }
+}
