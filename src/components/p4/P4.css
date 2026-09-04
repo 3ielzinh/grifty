@@ -56,13 +56,19 @@
   transform: translateY(-50%); /* Garante que a ponta da seta faça sentido */
 }
 
+.p4 .seguir {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
 .p4 .seguir p {
-  margin: 20px 0;
-  font-size: 1.15rem;
+  margin: 0;
+  font-size: 1.2rem;
   display: flex;
   align-items: center;
-  gap: 0.8rem;
-  line-height: 1.5;
+  gap: 1rem;
+  line-height: 1.7;
   color: #333;
 }
 
