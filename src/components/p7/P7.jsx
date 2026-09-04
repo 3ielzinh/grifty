@@ -83,9 +83,6 @@ const P7 = () => {
               <div className="p7-card-price">
                 <span className="p7-amount">Parcelado</span>
                 <span className="p7-subtext">Sem comprometer o limite do cartão</span>
-                <span className="p7-subtext p7-installment-note">
-                  *Nessa modalidade as aulas são liberadas gradativamente, de acordo com o pagamento das parcelas.
-                </span>
               </div>
               <button
                 className="p7-card-btn"

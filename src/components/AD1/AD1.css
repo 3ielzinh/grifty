@@ -71,6 +71,12 @@
     font-weight: 500;
 }
 
+.ad1-card .ad1-installment-note {
+    margin-top: 1rem;
+    font-size: 0.7rem;
+    line-height: 1.4;
+}
+
 .ad1-button {
     display: flex;
     justify-content: center;

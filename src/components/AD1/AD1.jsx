@@ -65,6 +65,9 @@ const AD1 = () => {
           <div className="ad1-card">
             <h3>Boleto Parcelado</h3>
             <p>Compre no boleto parcelado</p>
+            <span className="ad1-installment-note">
+              *nessa modalidade as aulas são liberadas gradativamente, de acordo com o pagamento das parcelas.
+            </span>
           </div>
         </div>
 
