@@ -157,6 +157,12 @@
   opacity: 1;
 }
 
+.p7-installment-note {
+  margin-top: 6px;
+  font-size: 0.65rem;
+  line-height: 1.4;
+}
+
 /* Botões dos Cards */
 .p7-card-btn {
   width: 100%;
