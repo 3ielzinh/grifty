@@ -77,7 +77,7 @@ const P7 = () => {
 
             {/* CARD 3: BOLETO PARCELADO */}
             <div className="p7-card">
-\              <div className="p7-card-header">
+              <div className="p7-card-header">
                 <h3 className="p7-card-title">Boleto Parcelado</h3>
               </div>
               <div className="p7-card-price">
