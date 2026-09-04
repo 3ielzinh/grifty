@@ -27,6 +27,7 @@
 }
 
 .p1 h1 {
+    font-family: var(--font3) !important;
     color: rgba(0, 0, 0, 0.4);
     font-size: 1.6rem;
     letter-spacing: 2px;
@@ -34,6 +35,7 @@
 }
 
 .p1 h2 {
+    font-family: var(--font3) !important;
     color: rgba(0, 0, 0, 0.4);
     font-size: 1.1rem;
     letter-spacing: 4px;

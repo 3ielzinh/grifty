@@ -45,7 +45,7 @@
 }
 
 .ad1-card h3 {
-    font-family: var(--font1-light, sans-serif);
+    font-family: var(--font3) !important;
     color: #ffffff;
     font-size: 1.4rem;
     font-weight: 700;
@@ -55,6 +55,7 @@
 }
 
 .ad1-card p {
+    font-family: var(--font3) !important;
     color: rgba(255, 255, 255, 0.95);
     font-size: 1rem;
     line-height: 1.4;
@@ -62,6 +63,7 @@
 }
 
 .ad1-card span {
+    font-family: var(--font3) !important;
     display: block;
     margin-top: 0.5rem;
     font-size: 0.85rem;
