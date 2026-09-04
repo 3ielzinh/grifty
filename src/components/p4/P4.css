@@ -57,12 +57,12 @@
 }
 
 .p4 .seguir p {
-  margin: 15px 0;
+  margin: 20px 0;
   font-size: 1.15rem;
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  line-height: 1.4;
+  gap: 0.8rem;
+  line-height: 1.5;
   color: #333;
 }
 
