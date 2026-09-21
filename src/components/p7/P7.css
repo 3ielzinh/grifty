@@ -62,11 +62,15 @@
   margin: 0;
 }
 
-.p7-waitlist-btn {
+.p7-waitlist-btn,
+.p7-waitlist-btn:visited,
+.p7-waitlist-btn:hover,
+.p7-waitlist-btn:active,
+.p7-waitlist-btn:focus {
   display: inline-block;
   background: #ffffff;
-  color: var(--wine, #830E0E);
-  font-family: var(--font1-bold, var(--font1-light));
+  color: var(--wine, #830E0E) !important;
+  font-family: var(--font1-bold, var(--font1-light)) !important;
   font-weight: 700;
   font-size: 1rem;
   letter-spacing: 0.5px;
