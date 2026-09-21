@@ -45,6 +45,45 @@
 }
 
 /* -------------------------------------------------------------------------- */
+/* INSCRIÇÕES FECHADAS / LISTA DE ESPERA                                      */
+/* -------------------------------------------------------------------------- */
+.p7-closed-title {
+  font-family: var(--font1-bold, var(--font1-light));
+  font-weight: 700;
+  font-size: 2.1rem;
+  max-width: 780px;
+}
+
+.p7-waitlist-subtitle {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  max-width: 600px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.p7-waitlist-btn {
+  display: inline-block;
+  background: #ffffff;
+  color: var(--wine, #830E0E);
+  font-family: var(--font1-bold, var(--font1-light));
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  padding: 20px 48px;
+  border-radius: 50px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  margin: 10px 0 30px 0;
+}
+
+.p7-waitlist-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
+}
+
+/* -------------------------------------------------------------------------- */
 /* CARDS DE PAGAMENTO (GLASSMORPHISM & HIGHLIGHT)                              */
 /* -------------------------------------------------------------------------- */
 .p7-cards-container {
@@ -312,6 +351,17 @@
 
   .p7-title {
     font-size: 2rem;
+  }
+
+  .p7-closed-title {
+    font-size: 1.5rem;
+  }
+
+  .p7-waitlist-btn {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 18px 24px;
   }
 
   .p7-help-buttons {

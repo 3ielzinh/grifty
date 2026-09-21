@@ -12,11 +12,8 @@ const P2 = () => {
   const containerRef = useRef(null); // Ref para o container pai
   const videoWrapperRef = useRef(null);
 
-  const handleScrollToPayment = () => {
-    const paymentSection = document.querySelector("#payment-section");
-    if (paymentSection) {
-      paymentSection.scrollIntoView({ behavior: "smooth" });
-    }
+  const handleJoinWaitlist = () => {
+    window.open("https://forms.gle/nz8wtQcJsjejNaRL7", "_blank");
   };
 
   useGSAP(() => {
@@ -72,8 +69,8 @@ const P2 = () => {
         </div>
         <span style={{textAlign: 'center'}}> Obtenha o Linhas e Formas e destrave o seu potencial máximo.</span>
         <div className="button">
-          <button onClick={handleScrollToPayment}>
-            QUERO FAZER PARTE DESTA TURMA
+          <button onClick={handleJoinWaitlist}>
+            Entrar na lista de espera
           </button>
         </div>
       </div>

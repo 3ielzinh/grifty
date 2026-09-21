@@ -40,11 +40,8 @@ const AD1 = () => {
     });
   }, { scope: containerRef });
 
-  const handleScrollToPayment = () => {
-    const paymentSection = document.querySelector("#payment-section");
-    if (paymentSection) {
-      paymentSection.scrollIntoView({ behavior: "smooth" });
-    }
+  const handleJoinWaitlist = () => {
+    window.open("https://forms.gle/nz8wtQcJsjejNaRL7", "_blank");
   };
 
   return (
@@ -72,8 +69,8 @@ const AD1 = () => {
         </div>
 
         <div className="ad1-button">
-          <button onClick={handleScrollToPayment}>
-            QUERO ADQUIRIR
+          <button onClick={handleJoinWaitlist}>
+            Entrar na lista de espera
           </button>
         </div>
       </div>
