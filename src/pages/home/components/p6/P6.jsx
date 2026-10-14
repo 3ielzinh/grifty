@@ -4,7 +4,7 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./P6.css";
 
-// import grifty from "../../assets/images/grifty.webp";
+// import grifty from "../../../../assets/images/grifty.webp";
 import grifty from "/grifty.jpeg";
 
 gsap.registerPlugin(ScrollTrigger);

@@ -1,7 +1,7 @@
 import React from 'react'
-import Home from './components/home/Home'
+import Home from './pages/home/Home'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
-import BabyShaggy from './components/babyshaggy/BabyShaggy'
+import BabyShaggy from './pages/babyshaggy/BabyShaggy'
 
 const App = () => {
   return (

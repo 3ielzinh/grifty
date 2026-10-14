@@ -3,8 +3,8 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import "./P1.css";
 
-import element from "../../assets/images/others/element.webp";
-import logo from "../../assets/images/others/logo.webp";
+import element from "../../../../assets/images/others/element.webp";
+import logo from "../../../../assets/images/others/logo.webp";
 
 const P1 = () => {
   const comp = useRef(null);

@@ -6,9 +6,9 @@ import { BiRightArrowCircle } from "react-icons/bi";
 
 import "./P5.css";
 
-import nw1 from "../../assets/images/whats/nw1.webp"
-import nw2 from "../../assets/images/whats/nw2.webp"
-import nw3 from "../../assets/images/whats/nw3.webp"
+import nw1 from "../../../../assets/images/whats/nw1.webp"
+import nw2 from "../../../../assets/images/whats/nw2.webp"
+import nw3 from "../../../../assets/images/whats/nw3.webp"
 
 gsap.registerPlugin(ScrollTrigger);
 
