@@ -5,7 +5,7 @@ Landing page do curso Linhas e Formas, desenvolvida com React e Vite.
 ## Organização
 
 - `src/pages/home/`: página principal e seus componentes em `components/`.
-- `src/pages/babyshaggy/`: página Baby Shaggy e seus componentes em `components/`; sua rota permanece desativada.
+- `src/pages/babyshaggy/`: landing page Baby Shaggy, disponível em `/babyshaggy` (com aliases `/baby-shaggy` e `/babyshag`).
 - `src/components/`: componentes independentes das páginas.
 - `src/assets/`: imagens e fontes importadas pelo código.
 - `src/global.css`: estilos globais.

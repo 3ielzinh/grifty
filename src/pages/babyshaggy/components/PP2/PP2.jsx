@@ -1,7 +1,5 @@
 import "./PP2.css"
 
-import React from 'react'
-
 const PP2 = () => {
   const slides = [
     "ESTRUTURAÇÃO DO CORTE",
@@ -10,8 +8,7 @@ const PP2 = () => {
     "CONQUISTE CLIENTES"
   ];
 
-  // Triplicamos o array para garantir que nunca falte conteúdo na tela durante a animação
-  const duplicatedSlides = [...slides, ...slides, ...slides,...slides, ...slides, ...slides,...slides, ...slides, ...slides];
+  const duplicatedSlides = [...slides, ...slides, ...slides, ...slides];
 
   return (
     <section className="pp2-section">
@@ -20,7 +17,7 @@ const PP2 = () => {
           {duplicatedSlides.map((slide, index) => (
             <div className="pp2-slide" key={index}>
               <h2>{slide}</h2>
-              {/* <span className="pp2-separator">|</span> */}
+              <span className="pp2-separator" aria-hidden="true">|</span>
             </div>
           ))}
         </div>

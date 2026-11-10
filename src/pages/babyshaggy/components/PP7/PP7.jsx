@@ -5,8 +5,9 @@ export default function PP7() {
     <section className="pp7-section">
       <div className="pp7-container">
         <div className="pp7-images">
-          <img src="/page2/grift.png" alt="Grifty Foto 1" />
-          <img src="/page2/grift.png" alt="Grifty Foto 2" />
+          <img className="pp7-main-image" src="/page2/profile/grifty-portrait.webp" alt="Grifty, cabeleireiro e educador" />
+          <img src="/page2/profile/grifty-aula.webp" alt="Grifty ensinando técnicas de corte para cabelos com curvatura" />
+          <img src="/page2/profile/grifty-demonstracao.webp" alt="Grifty durante uma demonstração prática" />
         </div>
       </div>
     </section>

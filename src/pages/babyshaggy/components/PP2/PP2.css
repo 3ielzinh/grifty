@@ -1,72 +1,51 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-
 .pp2-section {
-    width: 100%;
-    height: auto;
-    padding: 1rem 0;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background-color: transparent;
+  width: 100%;
+  overflow: hidden;
+  background: var(--baby-gold);
+}
+
+.pp2-carousel-infinite,
+.pp2-track {
+  display: flex;
 }
 
 .pp2-carousel-infinite {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
 }
 
 .pp2-track {
-    display: flex;
-    gap: 3rem;
-    animation: pp2-marquee 120s linear infinite;
-    will-change: transform;
-    background-color: #520000;
-    padding: 1rem 0;
-    font-family: 'Open Sans', "fonte2";
+  width: max-content;
+  align-items: center;
+  padding: .8rem 0;
+  animation: pp2-marquee 38s linear infinite;
+  will-change: transform;
 }
 
 .pp2-slide {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
 }
 
 .pp2-slide h2 {
-    color: #fff;
-    font-size: 1.2rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-family: 'Open Sans', "fonte2";
+  color: #fff;
+  font-size: clamp(.82rem, 1.5vw, 1rem);
+  font-weight: 800 !important;
+  letter-spacing: .035em;
+  white-space: nowrap;
+}
+
+.pp2-separator {
+  margin: 0 .75rem;
+  color: rgba(255, 255, 255, .72);
+  font-weight: 700;
 }
 
 @keyframes pp2-marquee {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-33.333%);
-    }
+  to { transform: translateX(-50%); }
 }
 
-@media (max-width: 768px) {
-    .pp2-slide h2 {
-        font-size: 1.5rem;
-    }
-    .pp2-track {
-        gap: 2rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .pp2-slide h2 {
-        font-size: 1.2rem;
-    }
+@media (prefers-reduced-motion: reduce) {
+  .pp2-track { animation: none; }
 }

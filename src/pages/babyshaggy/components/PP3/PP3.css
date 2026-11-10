@@ -1,236 +1,131 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-
 .pp3-section {
-    width: 100%;
-    min-height: auto;
-    padding: 2rem;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: transparent;
+  display: flex;
+  justify-content: center;
+  padding: clamp(3rem, 7vw, 6rem) 1rem;
+  background: #fffdfa;
 }
 
 .pp3-container {
-    width: 100%;
-    max-width: 900px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 3rem;
+  display: flex;
+  width: min(100%, 920px);
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(2rem, 4vw, 3.5rem);
+  text-align: center;
 }
 
 .pp3-title {
-    color: #520000;
-    font-size: 2.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-family: 'Open Sans', 'fonte3', sans-serif;
+  color: var(--baby-gold);
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+  font-weight: 800 !important;
+  text-wrap: balance;
 }
 
 .pp3-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-    width: 100%;
-    max-width: 650px;
-    align-items: center;
+  display: grid;
+  gap: 1rem;
 }
 
 .pp3-list li {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    color: #111111;
-    font-size: 1.2rem;
-    font-weight: 500;
-    text-align: center;
-    width: 100%;
-    font-family: 'Open Sans', 'fonte2', sans-serif;
-}
-
-.pp3-check {
-    background-color: #520000;
-    color: #ffffff;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.85rem;
-    flex-shrink: 0;
-    box-shadow: 0 4px 10px rgba(82, 0, 0, 0.2);
-    text-align: center;
+  color: #1d1b1c;
+  font-size: clamp(1rem, 2vw, 1.18rem);
+  font-weight: 700;
 }
 
 .pp3-gallery-wrapper {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 1rem;
+  width: 100%;
 }
 
 .pp3-slider {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    width: 100%;
-    max-width: 650px;
+  display: grid;
+  grid-template-columns: 48px minmax(0, 660px) 48px;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(.6rem, 2vw, 1.25rem);
 }
 
 .pp3-image-box {
-    width: 100%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-    border-radius: 12px;
-    cursor: pointer;
+  display: block;
+  overflow: hidden;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  box-shadow: 0 16px 35px rgba(32, 20, 23, .14);
 }
 
 .pp3-image-box img {
-    width: 100%;
-    object-fit: cover;
-    display: block;
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .pp3-arrow {
-    background-color: #000000;
-    color: #ffffff;
-    border: none;
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    font-size: 1.5rem;
-    font-weight: bold;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    flex-shrink: 0;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    z-index: 10;
+  display: inline-flex;
+  width: 46px;
+  height: 46px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--baby-gold);
+  color: #fff;
+  font-size: 1.35rem;
+  transition: transform .2s ease, opacity .2s ease;
 }
 
-.pp3-arrow:hover {
-    background-color: #520000;
-    box-shadow: none;
-}
+.pp3-arrow:hover:not(:disabled) { transform: scale(1.06); }
+.pp3-arrow:disabled { opacity: .62; cursor: default; }
 
-@media (max-width: 768px) {
-    .pp3-title {
-        font-size: 2.6rem;
-    }
-    .pp3-list li {
-        font-size: 1.35rem;
-    }
-    .pp3-slider {
-        gap: 1rem;
-        position: relative;
-        max-width: 100%;
-        padding: 0 2.5rem;
-    }
-    .pp3-arrow {
-        width: 45px;
-        height: 45px;
-        font-size: 1.2rem;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: rgba(0, 0, 0, 0.7);
-    }
-    .pp3-prev {
-        left: 0;
-    }
-    .pp3-next {
-        right: 0;
-    }
-}
-
-@media (max-width: 492px) {
-    .pp3-title {
-        font-size: 2.3rem;
-    }
-    .pp3-list li {
-        font-size: 1rem;
-    }
-    .pp3-slider {
-        padding: 0 2rem;
-    }
-}
-
-/* --- Modal / Tela Cheia --- */
 .pp3-modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.85);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    padding: 1.5rem;
-    animation: pp3FadeIn 0.3s ease;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(17, 10, 12, .9);
 }
 
 .pp3-modal-content {
-    position: relative;
-    max-width: 90vw;
-    max-height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: relative;
+  display: flex;
+  max-width: 94vw;
+  max-height: 92vh;
 }
 
 .pp3-modal-content img {
-    max-width: 100%;
-    max-height: 90vh;
-    object-fit: contain;
-    border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  max-width: 100%;
+  max-height: 88vh;
+  border-radius: 6px;
+  object-fit: contain;
 }
 
 .pp3-modal-close {
-    position: absolute;
-    top: -45px;
-    right: 0;
-    background-color: #ffffff;
-    color: #000000;
-    border: none;
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    font-size: 1.4rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: .75rem;
+  right: .75rem;
+  z-index: 1;
+  display: inline-flex;
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--baby-wine);
+  font-size: 1.35rem;
 }
 
-.pp3-modal-close:hover {
-    background-color: #520000;
-    color: #ffffff;
-}
+@media (max-width: 620px) {
+  .pp3-slider {
+    grid-template-columns: 34px minmax(0, 1fr) 34px;
+    width: calc(100% + .75rem);
+    margin-left: -.375rem;
+  }
 
-@keyframes pp3FadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  .pp3-arrow {
+    width: 34px;
+    height: 34px;
+    font-size: 1rem;
+  }
 }

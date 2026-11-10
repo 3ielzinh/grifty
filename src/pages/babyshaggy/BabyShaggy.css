@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+
+.baby-shaggy-page {
+  --baby-wine: #4d1222;
+  --baby-gold: #9a6c07;
+  --baby-ink: #171717;
+  --baby-paper: #fffdfa;
+  min-height: 100vh;
+  overflow: hidden;
+  color: var(--baby-ink);
+  background: var(--baby-paper);
+  font-family: 'Open Sans', Arial, sans-serif !important;
+}
+
+.baby-shaggy-page *,
+.baby-shaggy-page h1,
+.baby-shaggy-page h2,
+.baby-shaggy-page h3,
+.baby-shaggy-page button,
+.baby-shaggy-page a {
+  box-sizing: border-box;
+  font-family: 'Open Sans', Arial, sans-serif !important;
+}
+
+.baby-shaggy-page img {
+  max-width: 100%;
+}
+
+.baby-shaggy-page button,
+.baby-shaggy-page a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.baby-shaggy-page :focus-visible {
+  outline: 3px solid #d6a126;
+  outline-offset: 4px;
+}

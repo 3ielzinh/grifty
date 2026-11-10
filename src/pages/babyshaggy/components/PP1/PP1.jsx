@@ -1,33 +1,28 @@
 import "./PP1.css"
+import { checkoutUrl } from "../../config"
 
 const PP1 = () => {
     return (
         <section className="pp1-section">
-        <div className="pp1-e1" />
-        <div className="pp1-e2" />
-        <div className="pp1-e3" />
-        <div className="pp1-e4" />
-        
         <div className="pp1-here">
             <div className="pp1-text">
-            <h1>Domine o método do Baby Shaggy e entregue cortes com estrutura</h1>
-            <h2>Assista o vídeo e conheça o pensamento do Grifty para a criação cortes autênticos</h2>
+              <h1>Domine as técnicas que vão te tornar referência em cortes de cabelos com curvatura</h1>
+              <p className="pp1-kicker">O método para se diferenciar em um mercado onde todo mundo parece igual</p>
+              <h2>Assista ao vídeo e conheça o pensamento do Grifty que vai te levar a criar cortes autênticos e lotar a sua agenda.</h2>
             </div>
 
             <div className="pp1-video-container">
-            <video controls width="100%" height="100%">
-                <source src="" type="video/mp4" />
+              <video controls preload="metadata" poster="/page2/baby-shaggy-poster.webp" playsInline>
+                <source src="/page2/baby-shaggy.mp4" type="video/mp4" />
                 Seu navegador não suporta vídeos.
-            </video>
+              </video>
             </div>
 
             <p className="pp1-subtext">
-            Dominar essas técnicas fez com que eu nunca mais me sentisse inseguro na hora de entregar cortes estruturados e com volume.
+              Uma nova forma de cortar cabelos com curvatura que você nunca viu antes, até agora.
             </p>
 
-            <button className="pp1-cta-button">
-            Quero adquirir o curso
-            </button>
+            <a className="pp1-cta-button" href={checkoutUrl}>Quero adquirir o curso</a>
         </div>
         </section>
     );

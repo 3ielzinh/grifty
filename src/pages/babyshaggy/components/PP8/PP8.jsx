@@ -40,19 +40,23 @@ export default function PP8() {
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
             return (
-              <div 
+              <div
                 key={index} 
                 className={`pp8-faq-item ${isOpen ? 'active' : ''}`}
-                onClick={() => toggleAccordion(index)}
               >
-                <div className="pp8-faq-question">
+                <button
+                  className="pp8-faq-question"
+                  onClick={() => toggleAccordion(index)}
+                  aria-expanded={isOpen}
+                  aria-controls={`faq-answer-${index}`}
+                >
                   <span>{faq.question}</span>
-                  <button className="pp8-icon" aria-label="Abrir/Fechar">
+                  <span className="pp8-icon" aria-hidden="true">
                     {isOpen ? <FiMinus /> : <FiPlus />}
-                  </button>
-                </div>
+                  </span>
+                </button>
                 {isOpen && (
-                  <div className="pp8-faq-answer">
+                  <div className="pp8-faq-answer" id={`faq-answer-${index}`}>
                     <p>{faq.answer}</p>
                   </div>
                 )}

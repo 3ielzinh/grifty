@@ -9,8 +9,22 @@ import PP8 from "./components/PP8/PP8"
 import "./BabyShaggy.css"
 
 const BabyShaggy = () => {
+  useEffect(() => {
+    const previousTitle = document.title
+    const description = document.querySelector('meta[name="description"]')
+    const previousDescription = description?.getAttribute('content')
+
+    document.title = 'Baby Shaggy | Grifty'
+    description?.setAttribute('content', 'Domine técnicas de corte para cabelos com curvatura e crie resultados com estrutura, volume e identidade.')
+
+    return () => {
+      document.title = previousTitle
+      if (description && previousDescription) description.setAttribute('content', previousDescription)
+    }
+  }, [])
+
   return (
-    <>
+    <main className="baby-shaggy-page">
         <PP1 />
         <PP2 />
         <PP3 />
@@ -19,8 +33,9 @@ const BabyShaggy = () => {
         <PP6 />
         <PP7 />
         <PP8 />
-    </>
+    </main>
   )
 }
 
 export default BabyShaggy
+import { useEffect } from "react"

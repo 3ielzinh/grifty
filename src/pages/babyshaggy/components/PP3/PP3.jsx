@@ -8,7 +8,6 @@ export default function PP3() {
 
   const images = [
     "/page2/ad.png",
-    "/page2/ad.png",
   ];
 
   const handlePrev = () => {
@@ -26,33 +25,36 @@ export default function PP3() {
         
         <ul className="pp3-list">
           <li>
-            <span className="pp3-check">✔</span> Leitura de Cortes
+            Leitura de Cortes
           </li>
           <li>
-            <span className="pp3-check">✔</span> Como Criar um Corte estruturado
+            Como se Destacar no Mercado
           </li>
           <li>
-            <span className="pp3-check">✔</span> Distribuição Correta do Volume
+            Como Utilizar Navalhas em Curvaturas
           </li>
           <li>
-            <span className="pp3-check">✔</span> Técnicas de Finalização
+            Como adaptar um corte para qualquer curvatura
+          </li>
+          <li>
+            Técnicas de Finalização
           </li>
         </ul>
 
         <div className="pp3-gallery-wrapper">
           <div className="pp3-slider">
-            <button className="pp3-arrow pp3-prev" onClick={handlePrev} aria-label="Anterior">
+            <button className="pp3-arrow pp3-prev" onClick={handlePrev} aria-label="Anterior" disabled={images.length === 1}>
               <FiChevronLeft />
             </button>
 
-            <div className="pp3-image-box" onClick={() => setIsModalOpen(true)}>
+            <button className="pp3-image-box" onClick={() => setIsModalOpen(true)} aria-label="Ampliar resultado antes e depois">
               <img 
                 src={images[currentIndex]} 
                 alt="Resultado Antes e Depois" 
               />
-            </div>
+            </button>
 
-            <button className="pp3-arrow pp3-next" onClick={handleNext} aria-label="Próximo">
+            <button className="pp3-arrow pp3-next" onClick={handleNext} aria-label="Próximo" disabled={images.length === 1}>
               <FiChevronRight />
             </button>
           </div>
