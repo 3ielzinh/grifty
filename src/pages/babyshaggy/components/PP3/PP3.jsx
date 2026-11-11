@@ -1,10 +1,29 @@
 import { useState } from 'react';
-import { FiX } from 'react-icons/fi';
+import { FiChevronLeft, FiChevronRight, FiX } from 'react-icons/fi';
 import "./PP3.css";
 
 export default function PP3() {
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const coverImage = "/page2/capa-shaggy.webp";
+  const images = [
+    {
+      src: "/page2/capa-shaggy.webp",
+      alt: "Capa do curso Baby Shaggy",
+    },
+    {
+      src: "/page2/ad-optimized.webp",
+      alt: "Resultado antes e depois do corte Baby Shaggy",
+    },
+  ];
+  const currentImage = images[currentIndex];
+
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
 
   return (
     <section className="pp3-section">
@@ -31,13 +50,21 @@ export default function PP3() {
 
         <div className="pp3-gallery-wrapper">
           <div className="pp3-slider">
-            <button className="pp3-image-box" onClick={() => setIsModalOpen(true)} aria-label="Ampliar capa do curso">
+            <button className="pp3-arrow pp3-prev" onClick={handlePrev} aria-label="Foto anterior">
+              <FiChevronLeft />
+            </button>
+
+            <button className="pp3-image-box" onClick={() => setIsModalOpen(true)} aria-label={`Ampliar ${currentImage.alt.toLowerCase()}`}>
               <img 
-                src={coverImage}
-                alt="Capa do curso Baby Shaggy"
+                src={currentImage.src}
+                alt={currentImage.alt}
                 loading="lazy"
                 decoding="async"
               />
+            </button>
+
+            <button className="pp3-arrow pp3-next" onClick={handleNext} aria-label="Próxima foto">
+              <FiChevronRight />
             </button>
           </div>
         </div>
@@ -50,7 +77,7 @@ export default function PP3() {
             <button className="pp3-modal-close" onClick={() => setIsModalOpen(false)} aria-label="Fechar">
               <FiX />
             </button>
-            <img src={coverImage} alt="Capa do curso Baby Shaggy ampliada" decoding="async" />
+            <img src={currentImage.src} alt={`${currentImage.alt} ampliada`} decoding="async" />
           </div>
         </div>
       )}

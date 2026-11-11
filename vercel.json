@@ -23,6 +23,15 @@
       ]
     },
     {
+      "source": "/page2/ad-optimized.webp",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
       "source": "/page2/baby-shaggy-poster.webp",
       "headers": [
         {

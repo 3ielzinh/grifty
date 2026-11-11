@@ -37,13 +37,15 @@
 }
 
 .pp3-slider {
-  display: flex;
+  display: grid;
+  grid-template-columns: 48px minmax(0, 660px) 48px;
+  align-items: center;
   justify-content: center;
+  gap: clamp(.6rem, 2vw, 1.25rem);
 }
 
 .pp3-image-box {
   display: block;
-  width: min(100%, 660px);
   overflow: hidden;
   border: 0;
   border-radius: 4px;
@@ -56,6 +58,21 @@
   width: 100%;
   height: auto;
 }
+
+.pp3-arrow {
+  display: inline-flex;
+  width: 46px;
+  height: 46px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--baby-gold);
+  color: #fff;
+  font-size: 1.35rem;
+  transition: transform .2s ease;
+}
+
+.pp3-arrow:hover { transform: scale(1.06); }
 
 .pp3-modal-overlay {
   position: fixed;
@@ -96,4 +113,18 @@
   background: #fff;
   color: var(--baby-wine);
   font-size: 1.35rem;
+}
+
+@media (max-width: 620px) {
+  .pp3-slider {
+    grid-template-columns: 34px minmax(0, 1fr) 34px;
+    width: calc(100% + .75rem);
+    margin-left: -.375rem;
+  }
+
+  .pp3-arrow {
+    width: 34px;
+    height: 34px;
+    font-size: 1rem;
+  }
 }
