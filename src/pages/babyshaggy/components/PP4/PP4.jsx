@@ -38,10 +38,10 @@ export default function PP4() {
 
           <div className="pp4-feedback-container">
             <button className="pp4-feedback-box" onClick={() => setSelectedImage(firstImage)} aria-label="Ampliar feedback de aluno">
-              <img src={firstImage} alt="Feedback de aluno 1" />
+              <img src={firstImage} alt="Feedback de aluno 1" loading="lazy" decoding="async" />
             </button>
             <button className="pp4-feedback-box pp4-feedback-box-secondary" onClick={() => setSelectedImage(secondImage)} aria-label="Ampliar próximo feedback de aluno">
-              <img src={secondImage} alt="Feedback de aluno 2" />
+              <img src={secondImage} alt="Feedback de aluno 2" loading="lazy" decoding="async" />
             </button>
           </div>
 
@@ -61,7 +61,7 @@ export default function PP4() {
             <button className="pp4-modal-close" onClick={() => setSelectedImage(null)} aria-label="Fechar">
               <FiX />
             </button>
-            <img src={selectedImage} alt="Feedback ampliado" />
+            <img src={selectedImage} alt="Feedback ampliado" decoding="async" />
           </div>
         </div>
       )}

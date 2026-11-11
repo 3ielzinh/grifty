@@ -7,7 +7,7 @@ export default function PP3() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const images = [
-    "/page2/ad.png",
+    "/page2/ad-optimized.webp",
   ];
 
   const handlePrev = () => {
@@ -51,6 +51,8 @@ export default function PP3() {
               <img 
                 src={images[currentIndex]} 
                 alt="Resultado Antes e Depois" 
+                loading="lazy"
+                decoding="async"
               />
             </button>
 
@@ -68,7 +70,7 @@ export default function PP3() {
             <button className="pp3-modal-close" onClick={() => setIsModalOpen(false)} aria-label="Fechar">
               <FiX />
             </button>
-            <img src={images[currentIndex]} alt="Resultado ampliado" />
+            <img src={images[currentIndex]} alt="Resultado ampliado" decoding="async" />
           </div>
         </div>
       )}
