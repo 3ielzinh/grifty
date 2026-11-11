@@ -1,22 +1,10 @@
 import { useState } from 'react';
-import { FiChevronLeft, FiChevronRight, FiX } from 'react-icons/fi';
+import { FiX } from 'react-icons/fi';
 import "./PP3.css";
 
 export default function PP3() {
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const images = [
-    "/page2/ad-optimized.webp",
-  ];
-
-  const handlePrev = () => {
-    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
-  };
-
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
-  };
+  const coverImage = "/page2/capa-shaggy.webp";
 
   return (
     <section className="pp3-section">
@@ -43,21 +31,13 @@ export default function PP3() {
 
         <div className="pp3-gallery-wrapper">
           <div className="pp3-slider">
-            <button className="pp3-arrow pp3-prev" onClick={handlePrev} aria-label="Anterior" disabled={images.length === 1}>
-              <FiChevronLeft />
-            </button>
-
-            <button className="pp3-image-box" onClick={() => setIsModalOpen(true)} aria-label="Ampliar resultado antes e depois">
+            <button className="pp3-image-box" onClick={() => setIsModalOpen(true)} aria-label="Ampliar capa do curso">
               <img 
-                src={images[currentIndex]} 
-                alt="Resultado Antes e Depois" 
+                src={coverImage}
+                alt="Capa do curso Baby Shaggy"
                 loading="lazy"
                 decoding="async"
               />
-            </button>
-
-            <button className="pp3-arrow pp3-next" onClick={handleNext} aria-label="Próximo" disabled={images.length === 1}>
-              <FiChevronRight />
             </button>
           </div>
         </div>
@@ -70,7 +50,7 @@ export default function PP3() {
             <button className="pp3-modal-close" onClick={() => setIsModalOpen(false)} aria-label="Fechar">
               <FiX />
             </button>
-            <img src={images[currentIndex]} alt="Resultado ampliado" decoding="async" />
+            <img src={coverImage} alt="Capa do curso Baby Shaggy ampliada" decoding="async" />
           </div>
         </div>
       )}

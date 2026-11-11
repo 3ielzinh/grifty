@@ -11,9 +11,10 @@
 
 .pp7-images {
   display: grid;
-  grid-template-columns: 1.25fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  gap: .45rem;
+  aspect-ratio: 8 / 5;
+  gap: .3rem;
   overflow: hidden;
   border-radius: 6px;
   background: #2b0c14;
@@ -33,7 +34,11 @@
   object-position: center 30%;
 }
 
+.pp7-demonstration-image {
+  object-position: center 38%;
+}
+
 @media (max-width: 600px) {
   .pp7-section { padding-inline: 0; padding-bottom: 0; }
-  .pp7-images { min-height: 510px; border-radius: 0; }
+  .pp7-images { border-radius: 0; }
 }
