@@ -1,17 +1,18 @@
 import { useState } from 'react';
 import { FiChevronLeft, FiChevronRight, FiX } from 'react-icons/fi';
 import "./PP3.css";
+import { page2Asset } from "../../config";
 
 export default function PP3() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const images = [
     {
-      src: "/page2/capa-shaggy.webp",
+      src: page2Asset("capa-shaggy.webp"),
       alt: "Capa do curso Baby Shaggy",
     },
     {
-      src: "/page2/ad-optimized.webp",
+      src: page2Asset("ad-optimized.webp"),
       alt: "Resultado antes e depois do corte Baby Shaggy",
     },
   ];

@@ -1,18 +1,18 @@
 import { useState } from 'react';
 import { FiChevronLeft, FiChevronRight, FiX } from 'react-icons/fi';
 import "./PP4.css";
-import { checkoutUrl } from "../../config";
+import { checkoutUrl, page2Asset } from "../../config";
 
 export default function PP4() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedImage, setSelectedImage] = useState(null);
 
   const images = [
-    "/page2/fd/dp/1.jpg",
-    "/page2/fd/dp/2.jpg",
-    "/page2/fd/dp/3.jpg",
-    "/page2/fd/dp/4.jpg",
-    "/page2/fd/dp/5.jpg",
+    page2Asset("fd/dp/1.jpg"),
+    page2Asset("fd/dp/2.jpg"),
+    page2Asset("fd/dp/3.jpg"),
+    page2Asset("fd/dp/4.jpg"),
+    page2Asset("fd/dp/5.jpg"),
   ];
 
   const handlePrev = () => {

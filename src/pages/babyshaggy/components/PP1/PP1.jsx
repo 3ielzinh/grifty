@@ -1,5 +1,5 @@
 import "./PP1.css"
-import { checkoutUrl } from "../../config"
+import { checkoutUrl, page2Asset } from "../../config"
 
 const PP1 = () => {
     return (
@@ -12,8 +12,8 @@ const PP1 = () => {
             </div>
 
             <div className="pp1-video-container">
-              <video controls preload="metadata" poster="/page2/baby-shaggy-thumb.webp" playsInline>
-                <source src="/page2/baby-shaggy-540p.mp4" type="video/mp4" />
+              <video controls preload="metadata" poster={page2Asset("baby-shaggy-thumb.webp")} playsInline>
+                <source src={page2Asset("baby-shaggy-540p.mp4")} type="video/mp4" />
                 Seu navegador não suporta vídeos.
               </video>
             </div>
