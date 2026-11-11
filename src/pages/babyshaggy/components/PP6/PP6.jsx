@@ -10,7 +10,7 @@ export default function PP6() {
             <p>Sou cabeleireiro, educador e pesquisador de forma.</p>
             <p>Meu trabalho sempre partiu da pergunta: como transformar técnica em identidade?</p>
             <p>Depois de anos estudando cabelos ondulados, cacheados e crespos, percebi que o corte só ganha força quando nasce de uma leitura clara de linhas, volumes e intenções.</p>
-            <p>Meus cursos são a materialização dessa pesquisa — um método para quem quer deixar de apenas reproduzir e começar a criar cortes com assinatura própria.</p>
+            <p>Meus cursos são a materialização dessa pesquisa. Um método para quem quer deixar de apenas reproduzir e começar a criar cortes com assinatura própria.</p>
           </div>
         </div>
       </div>

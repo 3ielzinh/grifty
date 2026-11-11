@@ -12,7 +12,7 @@ const PP1 = () => {
             </div>
 
             <div className="pp1-video-container">
-              <video controls preload="metadata" poster="/page2/baby-shaggy-poster.webp" playsInline>
+              <video controls preload="metadata" poster="/page2/baby-shaggy-thumb.webp" playsInline>
                 <source src="/page2/baby-shaggy-540p.mp4" type="video/mp4" />
                 Seu navegador não suporta vídeos.
               </video>
