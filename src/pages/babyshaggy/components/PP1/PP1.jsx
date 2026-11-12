@@ -1,5 +1,6 @@
 import "./PP1.css"
 import { checkoutUrl, page2Asset } from "../../config"
+import { trackCheckoutStart } from "../../metaPixel"
 
 const PP1 = () => {
     return (
@@ -22,7 +23,7 @@ const PP1 = () => {
               Uma nova forma de cortar cabelos com curvatura que você nunca viu antes, até agora.
             </p>
 
-            <a className="pp1-cta-button" href={checkoutUrl}>Quero adquirir o curso</a>
+            <a className="pp1-cta-button" href={checkoutUrl} onClick={trackCheckoutStart}>Quero adquirir o curso</a>
         </div>
         </section>
     );

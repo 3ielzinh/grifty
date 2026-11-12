@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import PP1 from "./components/PP1/PP1"
 import PP2 from "./components/PP2/PP2"
 import PP3 from "./components/PP3/PP3"
@@ -7,6 +8,7 @@ import PP6 from "./components/PP6/PP6"
 import PP7 from "./components/PP7/PP7"
 import PP8 from "./components/PP8/PP8"
 import "./BabyShaggy.css"
+import { initializeMetaPixel } from "./metaPixel"
 
 const BabyShaggy = () => {
   useEffect(() => {
@@ -16,6 +18,7 @@ const BabyShaggy = () => {
 
     document.title = 'Baby Shaggy | Grifty'
     description?.setAttribute('content', 'Domine técnicas de corte para cabelos com curvatura e crie resultados com estrutura, volume e identidade.')
+    initializeMetaPixel()
 
     return () => {
       document.title = previousTitle
@@ -38,4 +41,3 @@ const BabyShaggy = () => {
 }
 
 export default BabyShaggy
-import { useEffect } from "react"

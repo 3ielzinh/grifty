@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { FiChevronLeft, FiChevronRight, FiX } from 'react-icons/fi';
 import "./PP4.css";
 import { checkoutUrl, page2Asset } from "../../config";
+import { trackCheckoutStart } from "../../metaPixel";
 
 export default function PP4() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -50,7 +51,7 @@ export default function PP4() {
           </button>
         </div>
 
-        <a className="pp4-cta-button" href={checkoutUrl}>
+        <a className="pp4-cta-button" href={checkoutUrl} onClick={trackCheckoutStart}>
           Quero elevar meus cortes
         </a>
       </div>

@@ -1,5 +1,6 @@
 import './PP5.css'
 import { checkoutUrl } from '../../config'
+import { trackCheckoutStart } from '../../metaPixel'
 
 export default function PP5() {
   return (
@@ -17,7 +18,7 @@ export default function PP5() {
           <span className="pp5-installment">OU 12X DE R$30,76*</span>
         </div>
 
-        <a className="pp5-cta-button" href={checkoutUrl}>
+        <a className="pp5-cta-button" href={checkoutUrl} onClick={trackCheckoutStart}>
           QUERO GARANTIR AGORA
         </a>
       </div>
