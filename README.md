@@ -27,6 +27,16 @@ npm run build
 
 O resultado é gerado em `dist/`.
 
+### Publicação do Baby Shaggy na Hostinger
+
+Como a página é publicada no subdiretório `/babyshaggy/`, gere o pacote da Hostinger com:
+
+```bash
+npm run build:hostinger
+```
+
+Esse comando configura a base correta para os arquivos e mídias em `/babyshaggy/`.
+
 ## Publicação na Vercel
 
 O projeto inclui `vercel.json` com detecção do Vite, diretório de saída e fallback de rotas para a SPA. Ao importar este repositório na Vercel, mantenha o diretório raiz como a raiz do repositório.

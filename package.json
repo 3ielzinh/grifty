@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build --configLoader runner",
+    "build:hostinger": "vite build --configLoader runner --base=/babyshaggy/",
     "lint": "eslint .",
     "preview": "vite preview"
   },
