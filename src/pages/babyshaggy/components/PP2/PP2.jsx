@@ -1,12 +1,9 @@
 import "./PP2.css"
+import useTranslation from "../../../../i18n/useTranslation"
 
 const PP2 = () => {
-  const slides = [
-    "ESTRUTURAÇÃO DO CORTE",
-    "LEITURA DO CORTE",
-    "GRADUAÇÃO",
-    "CONQUISTE CLIENTES"
-  ];
+  const { t } = useTranslation();
+  const slides = t("baby.ticker");
 
   const duplicatedSlides = [...slides, ...slides, ...slides, ...slides];
 

@@ -2,12 +2,14 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import "./P1.css";
+import useTranslation from "../../../../i18n/useTranslation";
 
 import element from "../../../../assets/images/others/element.webp";
 import logo from "../../../../assets/images/others/logo.webp";
 
 const P1 = () => {
   const comp = useRef(null);
+  const { t } = useTranslation();
 
   useGSAP(() => {
     const tl = gsap.timeline();
@@ -62,10 +64,10 @@ const P1 = () => {
         <img src={element} alt="" className="e4" loading="eager" />
       </div>
       <div className="here">
-        <img src={logo} alt="Logo" className="logo" loading="eager" />
+        <img src={logo} alt={t("home.hero.logoAlt")} className="logo" loading="eager" />
         <div className="text">
-          <h1>DESCUBRA UMA FORMAÇÃO PARA CABELEIREIROS QUE DESEJAM IR ALÉM DA REPETIÇÃO.</h1>
-          <h2>FORMAÇÃO ONLINE</h2>
+          <h1>{t("home.hero.headline")}</h1>
+          <h2>{t("home.hero.format")}</h2>
         </div>
       </div>
     </div>

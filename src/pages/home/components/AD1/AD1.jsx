@@ -3,11 +3,13 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./AD1.css";
+import useTranslation from "../../../../i18n/useTranslation";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const AD1 = () => {
   const containerRef = useRef(null);
+  const { t } = useTranslation();
 
   useGSAP(() => {
     ScrollTrigger.refresh();
@@ -49,28 +51,28 @@ const AD1 = () => {
       <div className="ad1-content">
         <div className="ad1-grid">
           <div className="ad1-card">
-            <h3>À Vista</h3>
-            <p>Desconto de 10% para pagamentos à vista</p>
+            <h3>{t("home.payment.cashTitle")}</h3>
+            <p>{t("home.payment.cashText")}</p>
           </div>
 
           <div className="ad1-card">
-            <h3>Cartão de Crédito</h3>
-            <p>Compre parcelado no cartão de crédito em até 12x</p>
-            <span>(sem juros até 5x)</span>
+            <h3>{t("home.payment.cardTitle")}</h3>
+            <p>{t("home.payment.cardText")}</p>
+            <span>{t("home.payment.cardNote")}</span>
           </div>
 
           <div className="ad1-card">
-            <h3>Boleto Parcelado</h3>
-            <p>Compre no boleto parcelado</p>
+            <h3>{t("home.payment.boletoTitle")}</h3>
+            <p>{t("home.payment.boletoText")}</p>
             <span className="ad1-installment-note">
-              *nessa modalidade as aulas são liberadas gradativamente, de acordo com o pagamento das parcelas.
+              {t("home.payment.boletoNote")}
             </span>
           </div>
         </div>
 
         <div className="ad1-button">
           <button onClick={handleJoinWaitlist}>
-            Entrar na lista de espera
+            {t("home.video.waitlist")}
           </button>
         </div>
       </div>

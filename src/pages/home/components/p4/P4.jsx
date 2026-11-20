@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./P4.css";
 import { FaArrowDown } from "react-icons/fa";
 import { HiMiniArrowRight } from "react-icons/hi2";
+import useTranslation from "../../../../i18n/useTranslation";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,6 +14,8 @@ const P4 = () => {
   const hereRef = useRef(null);
   const borderRef = useRef(null);
   const arrowRef = useRef(null);
+  const { t } = useTranslation();
+  const items = t("home.curriculum.items");
 
   useGSAP(() => {
     // Linha de scroll e Seta
@@ -70,8 +73,8 @@ const P4 = () => {
     <div className="p4" ref={containerRef}>
       <div className="content">
         <div className="title">
-          <h1>O que você vai aprender?</h1>
-          <h3>A formação é composta por mais de 10 aulas gravadas, com demonstrações práticas e explicações detalhadas:</h3>
+          <h1>{t("home.curriculum.heading")}</h1>
+          <h3>{t("home.curriculum.description")}</h3>
         </div>
 
         <div className="here" ref={hereRef}>
@@ -85,16 +88,7 @@ const P4 = () => {
           </div>
 
           <div className="seguir">
-            <p><HiMiniArrowRight />Leitura estrutural do corte</p>
-            <p><HiMiniArrowRight />Ferramentas e Materiais</p>
-            <p><HiMiniArrowRight />Ângulos e Projeções</p>
-            <p><HiMiniArrowRight />Construção de camadas baixas, médias e altas</p>
-            <p><HiMiniArrowRight />Shaggy Hair com tesoura e navalha</p>
-            <p><HiMiniArrowRight />Mullet em diferentes curvaturas</p>
-            <p><HiMiniArrowRight />Linhas geométricas aplicadas ao corte</p>
-            <p><HiMiniArrowRight />Adaptação de técnicas para cada curvatura</p>
-            <p><HiMiniArrowRight />Construção de Identidade e Posicionamento</p>
-            <p><HiMiniArrowRight />Técnicas para atração de novos clientes</p>
+            {items.map((item) => <p key={item}><HiMiniArrowRight />{item}</p>)}
           </div>
         </div>
       </div>

@@ -12,18 +12,7 @@ import { initializeMetaPixel } from "./metaPixel"
 
 const BabyShaggy = () => {
   useEffect(() => {
-    const previousTitle = document.title
-    const description = document.querySelector('meta[name="description"]')
-    const previousDescription = description?.getAttribute('content')
-
-    document.title = 'Baby Shaggy | Grifty'
-    description?.setAttribute('content', 'Domine técnicas de corte para cabelos com curvatura e crie resultados com estrutura, volume e identidade.')
     initializeMetaPixel()
-
-    return () => {
-      document.title = previousTitle
-      if (description && previousDescription) description.setAttribute('content', previousDescription)
-    }
   }, [])
 
   return (

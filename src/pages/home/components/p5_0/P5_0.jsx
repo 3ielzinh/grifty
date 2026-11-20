@@ -6,6 +6,7 @@ import { Draggable } from "gsap/all";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 
 import "./P5_0.css";
+import useTranslation from "../../../../i18n/useTranslation";
 
 import mod1 from "/carrocel/2.png";
 import mod2 from "/carrocel/3.png";
@@ -23,8 +24,19 @@ import mod13 from "/carrocel/14.png";
 
 gsap.registerPlugin(ScrollTrigger, Draggable);
 
+const updateScrollButtons = (ref, setArrowState) => {
+  if (!ref.current) return;
+  const { scrollLeft, scrollWidth, clientWidth } = ref.current;
+
+  setArrowState({
+    left: scrollLeft > 5,
+    right: scrollLeft + clientWidth < scrollWidth - 5,
+  });
+};
+
 const P5_0 = () => {
   const containerRef = useRef(null);
+  const { t } = useTranslation();
 
   const staticContainerRef1 = useRef(null);
   const staticContainerRef2 = useRef(null);
@@ -59,19 +71,6 @@ const P5_0 = () => {
 
     ScrollTrigger.refresh();
   }, { scope: containerRef });
-
-  const updateScrollButtons = (ref, setArrowState) => {
-    if (!ref.current) return;
-    const { scrollLeft, scrollWidth, clientWidth } = ref.current;
-
-    const hasMoreRight = scrollLeft + clientWidth < scrollWidth - 5;
-    const hasMoreLeft = scrollLeft > 5;
-
-    setArrowState({
-      left: hasMoreLeft,
-      right: hasMoreRight,
-    });
-  };
 
   useEffect(() => {
     const checkScrolls = () => {
@@ -123,16 +122,17 @@ const P5_0 = () => {
   return (
     <div className="p5_0" ref={containerRef}>
       <div className="p5_0-title">
-        <h1>NOSSOS MÓDULOS</h1>
+        <h1>{t("home.modules.heading")}</h1>
       </div>
 
       {/* FILEIRA 1 */}
       <div className="row-wrapper">
-        <h2 className="row-title">Introdução</h2>
+        <h2 className="row-title">{t("home.modules.introduction")}</h2>
         <div className="carousel-main-wrapper">
           {showArrows1.left && (
             <button
               className="nav-arrow-p5 left"
+              aria-label={t("home.modules.previous")}
               onClick={() => handleStaticScroll(staticContainerRef1, "left", setShowArrows1)}
             >
               <BiChevronLeft size={45} />
@@ -146,7 +146,7 @@ const P5_0 = () => {
             <div className="static-track">
               {introducao.map((mod, index) => (
                 <div key={index} className="modulo-card">
-                  <img src={mod.img} alt={`Introdução Módulo ${index}`} />
+                  <img src={mod.img} alt={t("home.modules.moduleAlt", { section: t("home.modules.introduction"), number: index + 1 })} />
                 </div>
               ))}
             </div>
@@ -154,6 +154,7 @@ const P5_0 = () => {
           {showArrows1.right && (
             <button
               className="nav-arrow-p5 right"
+              aria-label={t("home.modules.next")}
               onClick={() => handleStaticScroll(staticContainerRef1, "right", setShowArrows1)}
             >
               <BiChevronRight size={45} />
@@ -164,11 +165,12 @@ const P5_0 = () => {
 
       {/* FILEIRA 2 */}
       <div className="row-wrapper">
-        <h2 className="row-title">Método Linhas e Formas</h2>
+        <h2 className="row-title">{t("home.modules.method")}</h2>
         <div className="carousel-main-wrapper">
           {showArrows2.left && (
             <button
               className="nav-arrow-p5 left"
+              aria-label={t("home.modules.previous")}
               onClick={() => handleStaticScroll(staticContainerRef2, "left", setShowArrows2)}
             >
               <BiChevronLeft size={45} />
@@ -182,7 +184,7 @@ const P5_0 = () => {
             <div className="static-track">
               {linhasEFormas.map((mod, index) => (
                 <div key={index} className="modulo-card">
-                  <img src={mod.img} alt={`Método Linhas e Formas Módulo ${index}`} />
+                  <img src={mod.img} alt={t("home.modules.moduleAlt", { section: t("home.modules.method"), number: index + 1 })} />
                 </div>
               ))}
             </div>
@@ -190,6 +192,7 @@ const P5_0 = () => {
           {showArrows2.right && (
             <button
               className="nav-arrow-p5 right"
+              aria-label={t("home.modules.next")}
               onClick={() => handleStaticScroll(staticContainerRef2, "right", setShowArrows2)}
             >
               <BiChevronRight size={45} />
@@ -200,11 +203,12 @@ const P5_0 = () => {
 
       {/* FILEIRA 3 */}
       <div className="row-wrapper">
-        <h2 className="row-title">Material Bônus</h2>
+        <h2 className="row-title">{t("home.modules.bonus")}</h2>
         <div className="carousel-main-wrapper">
           {showArrows3.left && (
             <button
               className="nav-arrow-p5 left"
+              aria-label={t("home.modules.previous")}
               onClick={() => handleStaticScroll(staticContainerRef3, "left", setShowArrows3)}
             >
               <BiChevronLeft size={45} />
@@ -218,7 +222,7 @@ const P5_0 = () => {
             <div className="static-track">
               {materialBonus.map((mod, index) => (
                 <div key={index} className="modulo-card">
-                  <img src={mod.img} alt={`Material Bônus Módulo ${index}`} />
+                  <img src={mod.img} alt={t("home.modules.moduleAlt", { section: t("home.modules.bonus"), number: index + 1 })} />
                 </div>
               ))}
             </div>
@@ -226,6 +230,7 @@ const P5_0 = () => {
           {showArrows3.right && (
             <button
               className="nav-arrow-p5 right"
+              aria-label={t("home.modules.next")}
               onClick={() => handleStaticScroll(staticContainerRef3, "right", setShowArrows3)}
             >
               <BiChevronRight size={45} />

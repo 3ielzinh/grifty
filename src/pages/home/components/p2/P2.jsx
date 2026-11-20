@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./P2.css";
+import useTranslation from "../../../../i18n/useTranslation";
 
 import capa2 from "/thumb.png";
 
@@ -11,6 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
 const P2 = () => {
   const containerRef = useRef(null); // Ref para o container pai
   const videoWrapperRef = useRef(null);
+  const { t } = useTranslation();
 
   const handleJoinWaitlist = () => {
     window.open("https://forms.gle/nz8wtQcJsjejNaRL7", "_blank");
@@ -53,7 +55,7 @@ const P2 = () => {
   return (
     <div className="p2" ref={containerRef}>
       <div className="content">
-        <h1>Antes de continuar, assista ao vídeo de apresentação e descubra uma nova perspectiva sobre cabelos com curvatura.</h1>
+        <h1>{t("home.video.heading")}</h1>
 
         <div className="video" ref={videoWrapperRef}>
           <video 
@@ -65,12 +67,13 @@ const P2 = () => {
           >
             <source media="(max-width: 768px)" src="/video-mobile.mp4" type="video/mp4" />
             <source src="/video-desktop.mp4" type="video/mp4" />
+            {t("home.video.unsupported")}
           </video>
         </div>
-        <span style={{textAlign: 'center'}}> Obtenha o Linhas e Formas e destrave o seu potencial máximo.</span>
+        <span style={{textAlign: 'center'}}>{t("home.video.caption")}</span>
         <div className="button">
           <button onClick={handleJoinWaitlist}>
-            Entrar na lista de espera
+            {t("home.video.waitlist")}
           </button>
         </div>
       </div>

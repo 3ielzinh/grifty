@@ -2,18 +2,20 @@ import { useState } from 'react';
 import { FiChevronLeft, FiChevronRight, FiX } from 'react-icons/fi';
 import "./PP3.css";
 import { page2Asset } from "../../config";
+import useTranslation from "../../../../i18n/useTranslation";
 
 export default function PP3() {
+  const { t } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const images = [
     {
       src: page2Asset("capa-shaggy.webp"),
-      alt: "Capa do curso Baby Shaggy",
+      alt: t("baby.learning.coverAlt"),
     },
     {
       src: page2Asset("ad-optimized.webp"),
-      alt: "Resultado antes e depois do corte Baby Shaggy",
+      alt: t("baby.learning.resultAlt"),
     },
   ];
   const currentImage = images[currentIndex];
@@ -29,33 +31,21 @@ export default function PP3() {
   return (
     <section className="pp3-section">
       <div className="pp3-container">
-        <h2 className="pp3-title">O que você vai aprender?</h2>
+        <h2 className="pp3-title">{t("baby.learning.heading")}</h2>
         
         <ul className="pp3-list">
-          <li>
-            Leitura de Cortes
-          </li>
-          <li>
-            Como se Destacar no Mercado
-          </li>
-          <li>
-            Como Utilizar Navalhas em Curvaturas
-          </li>
-          <li>
-            Como adaptar um corte para qualquer curvatura
-          </li>
-          <li>
-            Técnicas de Finalização
-          </li>
+          {t("baby.learning.items").map((item) => (
+            <li key={item}>{item}</li>
+          ))}
         </ul>
 
         <div className="pp3-gallery-wrapper">
           <div className="pp3-slider">
-            <button className="pp3-arrow pp3-prev" onClick={handlePrev} aria-label="Foto anterior">
+            <button className="pp3-arrow pp3-prev" onClick={handlePrev} aria-label={t("baby.learning.previous")}>
               <FiChevronLeft />
             </button>
 
-            <button className="pp3-image-box" onClick={() => setIsModalOpen(true)} aria-label={`Ampliar ${currentImage.alt.toLowerCase()}`}>
+            <button className="pp3-image-box" onClick={() => setIsModalOpen(true)} aria-label={t("baby.learning.enlarge", { item: currentImage.alt.toLowerCase() })}>
               <img 
                 src={currentImage.src}
                 alt={currentImage.alt}
@@ -64,7 +54,7 @@ export default function PP3() {
               />
             </button>
 
-            <button className="pp3-arrow pp3-next" onClick={handleNext} aria-label="Próxima foto">
+            <button className="pp3-arrow pp3-next" onClick={handleNext} aria-label={t("baby.learning.next")}>
               <FiChevronRight />
             </button>
           </div>
@@ -75,10 +65,10 @@ export default function PP3() {
       {isModalOpen && (
         <div className="pp3-modal-overlay" onClick={() => setIsModalOpen(false)}>
           <div className="pp3-modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="pp3-modal-close" onClick={() => setIsModalOpen(false)} aria-label="Fechar">
+            <button className="pp3-modal-close" onClick={() => setIsModalOpen(false)} aria-label={t("baby.learning.close")}>
               <FiX />
             </button>
-            <img src={currentImage.src} alt={`${currentImage.alt} ampliada`} decoding="async" />
+            <img src={currentImage.src} alt={t("baby.learning.enlarged", { item: currentImage.alt })} decoding="async" />
           </div>
         </div>
       )}

@@ -3,8 +3,10 @@ import { FiChevronLeft, FiChevronRight, FiX } from 'react-icons/fi';
 import "./PP4.css";
 import { checkoutUrl, page2Asset } from "../../config";
 import { trackCheckoutStart } from "../../metaPixel";
+import useTranslation from "../../../../i18n/useTranslation";
 
 export default function PP4() {
+  const { t } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -30,39 +32,39 @@ export default function PP4() {
   return (
     <section className="pp4-section">
       <div className="pp4-container">
-        <h2 className="pp4-title">#Feedback dos meus alunos</h2>
+        <h2 className="pp4-title">{t("baby.feedback.heading")}</h2>
         
         <div className="pp4-slider-wrapper">
-          <button className="pp4-arrow pp4-prev" onClick={handlePrev} aria-label="Anterior">
+          <button className="pp4-arrow pp4-prev" onClick={handlePrev} aria-label={t("baby.feedback.previous")}>
             <FiChevronLeft />
           </button>
 
           <div className="pp4-feedback-container">
-            <button className="pp4-feedback-box" onClick={() => setSelectedImage(firstImage)} aria-label="Ampliar feedback de aluno">
-              <img src={firstImage} alt="Feedback de aluno 1" loading="lazy" decoding="async" />
+            <button className="pp4-feedback-box" onClick={() => setSelectedImage(firstImage)} aria-label={t("baby.feedback.enlarge")}>
+              <img src={firstImage} alt={t("baby.feedback.imageAlt", { number: 1 })} loading="lazy" decoding="async" />
             </button>
-            <button className="pp4-feedback-box pp4-feedback-box-secondary" onClick={() => setSelectedImage(secondImage)} aria-label="Ampliar próximo feedback de aluno">
-              <img src={secondImage} alt="Feedback de aluno 2" loading="lazy" decoding="async" />
+            <button className="pp4-feedback-box pp4-feedback-box-secondary" onClick={() => setSelectedImage(secondImage)} aria-label={t("baby.feedback.enlargeNext")}>
+              <img src={secondImage} alt={t("baby.feedback.imageAlt", { number: 2 })} loading="lazy" decoding="async" />
             </button>
           </div>
 
-          <button className="pp4-arrow pp4-next" onClick={handleNext} aria-label="Próximo">
+          <button className="pp4-arrow pp4-next" onClick={handleNext} aria-label={t("baby.feedback.next")}>
             <FiChevronRight />
           </button>
         </div>
 
         <a className="pp4-cta-button" href={checkoutUrl} onClick={trackCheckoutStart}>
-          Quero elevar meus cortes
+          {t("baby.feedback.cta")}
         </a>
       </div>
 
       {selectedImage && (
         <div className="pp4-modal-overlay" onClick={() => setSelectedImage(null)}>
           <div className="pp4-modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="pp4-modal-close" onClick={() => setSelectedImage(null)} aria-label="Fechar">
+            <button className="pp4-modal-close" onClick={() => setSelectedImage(null)} aria-label={t("baby.feedback.close")}>
               <FiX />
             </button>
-            <img src={selectedImage} alt="Feedback ampliado" decoding="async" />
+            <img src={selectedImage} alt={t("baby.feedback.enlargedAlt")} decoding="async" />
           </div>
         </div>
       )}

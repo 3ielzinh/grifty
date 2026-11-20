@@ -3,11 +3,13 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./P7.css";
+import useTranslation from "../../../../i18n/useTranslation";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const P7 = () => {
   const container = useRef(null);
+  const { t } = useTranslation();
 
   useGSAP(() => {
     ScrollTrigger.refresh();
@@ -29,16 +31,16 @@ const P7 = () => {
     <section className="p7-section-container" ref={container}>
       <div className="p7-minimal">
         <div className="p7-content">
-          <p className="p7-pre">Segunda turma encerrada</p>
+          <p className="p7-pre">{t("home.closing.status")}</p>
 
           <h2 className="p7-title p7-closed-title">
-            No momento o Linhas e Formas está com as inscrições fechadas
+            {t("home.closing.title")}
             <br />
-            A terceira turma será aberta em 2027
+            {t("home.closing.nextCohort")}
           </h2>
 
           <p className="p7-waitlist-subtitle">
-            Tenha acesso exclusivo ao lançamento da terceira turma entrando em nossa lista de espera
+            {t("home.closing.description")}
           </p>
 
           <a
@@ -47,13 +49,13 @@ const P7 = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Entrar na lista de espera
+            {t("home.closing.waitlist")}
           </a>
 
           {/* Seção de Suporte */}
           <div className="p7-help-section">
-            <h3 className="p7-help-title">PRECISA DE MAIS AJUDA?</h3>
-            <p className="p7-help-subtitle">Fale com nossa equipe</p>
+            <h3 className="p7-help-title">{t("home.closing.helpTitle")}</h3>
+            <p className="p7-help-subtitle">{t("home.closing.helpDescription")}</p>
             
             <div className="p7-help-buttons">
               <a
@@ -62,13 +64,13 @@ const P7 = () => {
                 rel="noopener noreferrer"
                 className="p7-help-link"
               >
-                Atendimento via Whatsapp
+                {t("home.closing.whatsapp")}
               </a>
               <a
                 href="mailto:linhaseformas@grifty.net"
                 className="p7-help-link"
               >
-                Atendimento via e-mail: linhaseformas@grifty.net
+                {t("home.closing.email")}: linhaseformas@grifty.net
               </a>
             </div>
           </div>
@@ -78,10 +80,10 @@ const P7 = () => {
       {/* Rodapé de Apoio */}
       <div className="p7-support-wrapper">
         <div className="p7-support">
-          <span className="p7-support-label">Apoio:</span>
+          <span className="p7-support-label">{t("home.closing.support")}</span>
           <img
             src="/CURLY.webp"
-            alt="Logo Curly Care"
+            alt={t("home.closing.supportLogoAlt")}
             className="p7-support-logo"
           />
         </div>

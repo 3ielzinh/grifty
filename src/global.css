@@ -120,6 +120,11 @@ body{
     font-weight: 300;
 }
 
+.app-shell {
+    min-height: 100vh;
+    position: relative;
+}
+
 body * {
     font-family: inherit !important;
 }

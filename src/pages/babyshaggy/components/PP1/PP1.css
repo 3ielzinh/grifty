@@ -1,7 +1,7 @@
 .pp1-section {
   display: flex;
   justify-content: center;
-  padding: clamp(2.25rem, 6vw, 5.5rem) 1rem 2.25rem;
+  padding: clamp(5.25rem, 8vw, 6.5rem) 1rem 2.25rem;
   background: #fffdfa;
 }
 
@@ -96,7 +96,7 @@
 
 @media (max-width: 560px) {
   .pp1-section {
-    padding-top: 1.6rem;
+    padding-top: 5rem;
   }
 
   .pp1-section h1 {

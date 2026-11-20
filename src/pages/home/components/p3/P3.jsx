@@ -4,14 +4,15 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import "./P3.css";
-
-import bannerImg from "/grid.jpg"; // Altere para o caminho da sua imagem estática
 import AD1 from "../AD1/AD1";
+import useTranslation from "../../../../i18n/useTranslation";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const P3 = () => {
   const container = useRef(null);
+  const { t } = useTranslation();
+  const paragraphs = t("home.concept.paragraphs");
 
   useGSAP(() => {
     const tl = gsap.timeline({
@@ -49,28 +50,12 @@ const P3 = () => {
     <section className="p3" ref={container} style={{ overflow: "hidden", position: "relative" }}>
       <div className="content">
         <h1 className="cabecalho2">
-          <strong>QUAIS SÃO AS POSSIBILIDADES DE UM CABELO COM CURVATURA?</strong>
+          <strong>{t("home.concept.heading")}</strong>
         </h1>
         
         <div className="text">
-          <p>
-            O Linhas e Formas é uma formação online para cabeleireiros que desejam ir além da repetição de técnicas e desenvolver um olhar mais profundo, consciente e criativo sobre o corte.
-          </p>
-          <p>
-            Com foco em cabelos ondulados, cacheados e crespos, a formação explora a arquitetura do corte através de linhas, volumes, pesos, direções e equilíbrio, ajudando você a compreender a estrutura de cada cabelo e adaptar diferentes formas às suas curvaturas.
-          </p>
-          <p>
-            Mais do que ensinar cortes para serem replicados, o Linhas e Formas te convida a entender o porquê de cada escolha, ampliar seu repertório e encontrar mais liberdade no seu processo criativo.
-          </p>
-          <p>
-            É um caminho para construir mais segurança, desenvolver sua identidade profissional e criar um trabalho cada vez mais autoral.
-          </p>
-          <p>
-            Porque corte é técnica, mas também é arte. E a sua assinatura nasce da forma como você escolhe olhar, interpretar e criar.
-          </p>
-          <p>
-            EXISTEM INFINITAS POSSIBILIDADES, NÓS SÓ PARAMOS DE EXPLORAR.
-          </p>
+          {paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+          <p>{t("home.concept.statement")}</p>
         </div>
 
         <AD1 />

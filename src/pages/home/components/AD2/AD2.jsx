@@ -5,11 +5,13 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./AD2.css";
 
 import logoCurly from "/logo2.png"; // Ajuste o caminho conforme o seu projeto
+import useTranslation from "../../../../i18n/useTranslation";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const AD2 = () => {
   const containerRef = useRef(null);
+  const { t } = useTranslation();
 
   useGSAP(() => {
     ScrollTrigger.refresh();
@@ -54,13 +56,13 @@ const AD2 = () => {
   return (
     <section className="ad2" ref={containerRef}>
       <div className="ad2-container">
-        <h2 className="ad2-title">OFERTA EXCLUSIVA</h2>
+        <h2 className="ad2-title">{t("home.exclusiveOffer.heading")}</h2>
 
         <div className="ad2-card">
           <div className="ad2-logo-circle">
             <img 
               src={logoCurly} 
-              alt="Logo Curly Care" 
+              alt={t("home.exclusiveOffer.logoAlt")}
               className="ad2-logo" 
               loading="lazy" 
             />
@@ -68,10 +70,10 @@ const AD2 = () => {
 
           <div className="ad2-text-content">
             <h3 className="ad2-card-title">
-              Faça parte da Segunda Turma e receba em sua casa 01 kit de Finalizadores Curly Care
+              {t("home.exclusiveOffer.title")}
             </h3>
             <p className="ad2-description">
-              Conheça os produtos de finalização mais utilizados pelo Grifty e entregue resultados surpreendentes para as suas clientes.
+              {t("home.exclusiveOffer.description")}
             </p>
           </div>
         </div>

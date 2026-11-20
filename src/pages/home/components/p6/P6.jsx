@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./P6.css";
+import useTranslation from "../../../../i18n/useTranslation";
 
 // import grifty from "../../../../assets/images/grifty.webp";
 import grifty from "/grifty.jpeg";
@@ -11,6 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const P6 = () => {
   const scope = useRef(null);
+  const { t } = useTranslation();
 
   useGSAP(() => {
     // 1. RECALCULAR POSIÇÕES: Vital para mobile
@@ -82,16 +84,16 @@ const P6 = () => {
     >
       <div className="text">
         <div className="content">
-          <h1><span>Criado por Grifty</span></h1>
+          <h1><span>{t("home.author.heading")}</span></h1>
           <p>
-            Sou cabeleireiro, educador e pesquisador de forma. <br />
-            Meu trabalho sempre partiu da pergunta: <strong>como transformar técnica em identidade?</strong>
+            {t("home.author.intro")} <br />
+            {t("home.author.questionLead")} <strong>{t("home.author.question")}</strong>
           </p>
           <p>
-            Depois de anos estudando cabelos ondulados, cacheados e crespos, percebi que o corte só ganha força quando nasce de uma leitura clara de linhas, volumes e intenções.
+            {t("home.author.body")}
           </p>
           <p>
-            O Linhas e Formas é a <strong>materialização dessa pesquisa</strong> — um método para quem quer deixar de apenas reproduzir e começar a criar cortes com assinatura própria.
+            {t("home.author.researchLead")} <strong>{t("home.author.research")}</strong> {t("home.author.researchTail")}
           </p>
         </div>
       </div>
@@ -99,7 +101,7 @@ const P6 = () => {
       <div className="img" style={{ pointerEvents: "none" }}>
         <img 
           src={grifty} 
-          alt="Grifty" 
+          alt={t("home.author.imageAlt")}
           loading="eager" 
           decoding="sync" 
           style={{ 

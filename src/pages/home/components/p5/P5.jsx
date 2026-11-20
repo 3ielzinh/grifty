@@ -5,15 +5,14 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { BiRightArrowCircle } from "react-icons/bi";
 
 import "./P5.css";
-
-import nw1 from "../../../../assets/images/whats/nw1.webp"
-import nw2 from "../../../../assets/images/whats/nw2.webp"
-import nw3 from "../../../../assets/images/whats/nw3.webp"
+import useTranslation from "../../../../i18n/useTranslation";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const P5 = () => {
   const containerRef = useRef(null);
+  const { t } = useTranslation();
+  const items = t("home.audience.items");
 
   useGSAP(() => {
     // Promoção de camadas
@@ -72,14 +71,11 @@ const P5 = () => {
     >
       <div className="content">
         <div className="title">
-          <h1>Para quem é essa formação?</h1>
-          <h3>Profissionais cabeleireiros que:</h3>
+          <h1>{t("home.audience.heading")}</h1>
+          <h3>{t("home.audience.description")}</h3>
         </div>
         <div className="text">
-          <p><BiRightArrowCircle color="#830E0E" /> Desejam se aprofundar na área de cabelos com curvatura</p>
-          <p><BiRightArrowCircle color="#830E0E" /> Querem evoluir tecnicamente e aumentar seu repertório</p>
-          <p><BiRightArrowCircle color="#830E0E" /> Buscam identidade, método e segurança</p>
-          <p><BiRightArrowCircle color="#830E0E" /> Desejam elevar o valor do próprio trabalho</p>
+          {items.map((item) => <p key={item}><BiRightArrowCircle color="#830E0E" /> {item}</p>)}
         </div>
       </div>
       {/* <div className="image" style={{ pointerEvents: "none" }}>
