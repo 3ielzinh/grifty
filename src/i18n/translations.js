@@ -177,6 +177,7 @@ const translations = {
         price: "R$ 297,00",
         installment: "OU 12X DE R$30,76*",
         cta: "QUERO GARANTIR AGORA",
+        subtitles: "As aulas contam com legendas em inglês e espanhol.",
       },
       author: {
         heading: "CRIADO POR GRIFTY",
@@ -394,6 +395,7 @@ const translations = {
         price: "R$ 297,00",
         installment: "OR 12 PAYMENTS OF R$ 30.76*",
         cta: "I WANT TO GET ACCESS NOW",
+        subtitles: "Video lessons include subtitles in English and Spanish.",
       },
       author: {
         heading: "CREATED BY GRIFTY",
@@ -611,6 +613,7 @@ const translations = {
         price: "R$ 297,00",
         installment: "O 12 CUOTAS DE R$ 30,76*",
         cta: "QUIERO ACCEDER AHORA",
+        subtitles: "Las clases en video incluyen subtítulos en inglés y español.",
       },
       author: {
         heading: "CREADO POR GRIFTY",

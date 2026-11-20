@@ -25,6 +25,11 @@ export default function PP5() {
           {t("baby.offer.cta")}
         </a>
       </div>
+
+      <p className="pp5-subtitle-note">
+        <span className="pp5-subtitle-icon" aria-hidden="true">CC</span>
+        <span>{t("baby.offer.subtitles")}</span>
+      </p>
     </section>
   );
 }

@@ -1,6 +1,9 @@
 .pp5-section {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  gap: 1.25rem;
   scroll-margin-top: 1rem;
   padding: clamp(4rem, 9vw, 7rem) 1rem;
   background: #fffdfa;
@@ -65,3 +68,42 @@
 }
 
 .pp5-cta-button:hover { transform: translateY(-2px); background: #65162d; }
+
+.pp5-subtitle-note {
+  display: flex;
+  width: min(100%, 560px);
+  align-items: center;
+  justify-content: center;
+  gap: .75rem;
+  margin: 0;
+  border: 1px solid rgba(77, 18, 34, .18);
+  border-radius: 999px;
+  padding: .85rem 1rem;
+  background: #fff8ed;
+  color: var(--baby-wine);
+  font-size: clamp(.9rem, 2vw, 1rem);
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(77, 18, 34, .08);
+}
+
+.pp5-subtitle-icon {
+  display: grid;
+  width: 2.15rem;
+  height: 1.55rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 2px solid currentColor;
+  border-radius: .4rem;
+  font-size: .65rem;
+  font-weight: 800;
+  letter-spacing: .05em;
+  line-height: 1;
+}
+
+@media (max-width: 380px) {
+  .pp5-subtitle-note {
+    border-radius: 16px;
+  }
+}
