@@ -1,0 +1,8 @@
+DirectoryIndex index.html
+AddType text/vtt .vtt
+
+RewriteEngine On
+RewriteBase /babyshaggy/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /babyshaggy/index.html [L]
