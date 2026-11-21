@@ -72,6 +72,15 @@
   line-height: 1.5;
 }
 
+.pp1-coupon {
+  display: block;
+  margin-top: .45rem;
+  color: var(--baby-wine);
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+
 .pp1-cta-button {
   display: inline-flex;
   min-width: min(100%, 390px);

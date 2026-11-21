@@ -1,10 +1,10 @@
 import './PP5.css'
-import { checkoutUrl } from '../../config'
+import { getCheckoutUrl } from '../../config'
 import { trackCheckoutStart } from '../../metaPixel'
 import useTranslation from '../../../../i18n/useTranslation'
 
 export default function PP5() {
-  const { t } = useTranslation()
+  const { language, t } = useTranslation()
 
   return (
     <section className="pp5-section" id="oferta">
@@ -21,7 +21,7 @@ export default function PP5() {
           <span className="pp5-installment">{t("baby.offer.installment")}</span>
         </div>
 
-        <a className="pp5-cta-button" href={checkoutUrl} onClick={trackCheckoutStart}>
+        <a className="pp5-cta-button" href={getCheckoutUrl(language)} onClick={trackCheckoutStart}>
           {t("baby.offer.cta")}
         </a>
       </div>
