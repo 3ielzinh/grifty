@@ -40,7 +40,6 @@ const PP1 = () => {
 
             <p className="pp1-subtext">
               {t("baby.hero.caption")}
-              <span className="pp1-coupon">{t("baby.hero.coupon")}</span>
             </p>
 
             <a className="pp1-cta-button" href={getCheckoutUrl(language)} onClick={trackCheckoutStart}>{t("baby.hero.cta")}</a>
