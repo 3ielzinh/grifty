@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FiChevronLeft, FiChevronRight, FiX } from 'react-icons/fi';
+import { FiCheckCircle, FiChevronLeft, FiChevronRight, FiInfo, FiX } from 'react-icons/fi';
 import "./PP4.css";
 import { getCheckoutUrl, page2Asset } from "../../config";
 import { trackCheckoutStart } from "../../metaPixel";
@@ -56,6 +56,27 @@ export default function PP4() {
         <a className="pp4-cta-button" href={getCheckoutUrl(language)} onClick={trackCheckoutStart}>
           {t("baby.feedback.cta")}
         </a>
+
+        <div className="pp4-course-overview">
+          <div className="pp4-course-overview-header">
+            <h3>{t("baby.feedback.overview.heading")}</h3>
+            <p>{t("baby.feedback.overview.intro")}</p>
+          </div>
+
+          <ul className="pp4-course-overview-list">
+            {t("baby.feedback.overview.items").map((item) => (
+              <li key={item}>
+                <FiCheckCircle aria-hidden="true" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+
+          <p className="pp4-course-overview-note">
+            <FiInfo aria-hidden="true" />
+            <span>{t("baby.feedback.overview.note")}</span>
+          </p>
+        </div>
       </div>
 
       {selectedImage && (
